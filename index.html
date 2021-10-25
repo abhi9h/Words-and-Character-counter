@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word counter</title>
+    <style>
+        body{
+            padding: 50px ;
+            
+        }
+        h1{
+            text-align: center;
+            background-color: aqua;
+            padding: 20px 100px;
+             }
+             textarea{
+                width: 99.3%;
+                border-color:coral;
+                border-width: 4px;
+                
+             }
+        p{text-align: center;
+        background-color:aqua;
+        padding: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0px;
+
+         }
+    </style>
+</head>
+<body>
+    <h1>Words and Character counter</h1>
+   
+    <textarea name="" id="textbox" cols="30" rows="10"></textarea>
+    
+    <p> <span id="word">0</span> Words and 
+        <span id="character">0</span> Character</p>
+
+ <script>
+     let textbox= document.getElementById("textbox");
+     textbox.addEventListener("input", function(){
+         var text = this.value;
+         let char= text.length;
+         document.getElementById("character").innerHTML=char;
+
+         text=text.trim();  // this method will trim the initial and endin white spaces
+         var word = text.split(" ");   //this will split into arry if found blank spaces
+         let clean= word.filter(function(wrd){  return wrd != "";}) //The filter() method creates an array filled with all array elements that pass a test
+         
+         document.getElementById("word").innerHTML=clean.length; 
+          
+
+     });
+
+
+</script>
+    
+</body>
+</html>
